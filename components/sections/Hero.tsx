@@ -2,14 +2,25 @@ import Link from 'next/link'
 
 export function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center px-6 pt-24">
+        <section className="relative min-h-screen flex items-center px-6 pt-24 overflow-hidden">
+            {/* Fondo con video */}
             <div className="absolute inset-0 -z-10 overflow-hidden">
-                <div className="absolute inset-0 bg-linear-to-br from-[#0F1A24]/90 via-[#1B4F72]/75 to-[#0F1A24]/95 z-10" />
-                <img
-                    src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1920&q=80"
-                    alt=""
+                {/* Overlay para garantizar contraste del texto */}
+                <div className="absolute inset-0 bg-linear-to-br from-oscuro/95 via-industrial/85 to-oscuro/95 z-10" />
+
+                {/* Video de fondo */}
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    poster="/images/hero-poster.jpg"
+                    aria-hidden="true"
                     className="w-full h-full object-cover"
-                />
+                >
+                    <source src="/videos/fondohome.mp4" type="video/mp4" />
+                </video>
             </div>
 
             <div className="max-w-4xl mx-auto w-full">
