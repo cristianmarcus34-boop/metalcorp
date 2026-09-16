@@ -20,11 +20,11 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-    metadataBase: new URL(siteConfig.url),
-    title: {
-        default: `${siteConfig.nombre} | Líder Global en Metales y Metalurgia`,
-        template: `%s | ${siteConfig.nombre}`,
-    },
+    metadataBase: new URL(
+        siteConfig.url.startsWith('http')
+            ? siteConfig.url
+            : `https://${siteConfig.url}`
+    ),
     description: siteConfig.descripcion,
     applicationName: siteConfig.nombre,
     authors: [{ name: siteConfig.nombre, url: siteConfig.url }],
