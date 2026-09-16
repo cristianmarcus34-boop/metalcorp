@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MetalCorp — Web Institucional
 
-## Getting Started
+Sitio institucional para una multinacional metalúrgica ficticia. Proyecto de portfolio desarrollado con **Next.js 16**, **TypeScript** y **Tailwind CSS v4**.
 
-First, run the development server:
+🔗 **Demo en vivo:** [metalcorp.vercel.app](https://metalcorp.vercel.app) _(actualizar después del deploy)_
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![Home de MetalCorp](./public/og/home.jpg)
+
+---
+
+## 🎯 Sobre el proyecto
+
+Web corporativa para una empresa metalúrgica con presencia global. Incluye:
+
+- **Home** con hero, estadísticas, catálogo de productos e industrias
+- **Catálogo de productos** con páginas de detalle dinámicas (`/productos/[slug]`)
+- **Páginas institucionales**: Nosotros, Industrias, Proveedores, Prensa, Contacto
+- **Sala de prensa** con comunicados y páginas de detalle (`/prensa/[slug]`)
+- **SEO completo**: metadatos por página, JSON-LD, sitemap y robots automáticos
+- **Diseño responsive** con paleta industrial custom
+
+---
+
+## 🛠️ Stack técnico
+
+| Capa | Tecnología |
+|------|-----------|
+| Framework | Next.js 16 (App Router) |
+| Lenguaje | TypeScript |
+| Estilos | Tailwind CSS v4 |
+| Íconos | lucide-react |
+| Fuentes | Inter + Montserrat (`next/font`) |
+| Deploy | Vercel |
+
+---
+
+## 🏗️ Estructura del proyecto
+
+```
+metalcorp/
+├── app/
+│   ├── page.tsx                    # Home
+│   ├── layout.tsx                  # Layout raíz con metadatos SEO
+│   ├── globals.css                 # Paleta industrial + Tailwind v4
+│   ├── nosotros/                   # Página institucional
+│   ├── productos/
+│   │   ├── page.tsx                # Catálogo
+│   │   └── [slug]/page.tsx         # Detalle dinámico
+│   ├── industrias/                 # Sectores que servimos
+│   ├── proveedores/                # Info para proveedores
+│   ├── prensa/
+│   │   ├── page.tsx                # Sala de prensa
+│   │   └── [slug]/page.tsx         # Detalle de comunicado
+│   ├── contacto/                   # Formulario + info
+│   ├── robots.ts                   # robots.txt automático
+│   └── sitemap.ts                  # sitemap.xml automático
+├── components/
+│   ├── layout/                     # Header, Footer
+│   ├── sections/                   # Hero, Estadísticas, Productos...
+│   └── seo/                        # JSON-LD Organization
+├── lib/
+│   ├── data.ts                     # Datos mock
+│   ├── site.ts                     # Configuración central
+│   └── utils.ts                    # Utilidad cn()
+└── public/
+    └── og/                         # Open Graph images
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Correr localmente
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# 1. Clonar
+git clone https://github.com/cristianmarcus34-boop/metalcorp.git
+cd metalcorp
 
-## Learn More
+# 2. Instalar dependencias
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# 3. Variables de entorno
+cp .env.example .env.local
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 4. Correr en desarrollo
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Abrí [http://localhost:3000](http://localhost:3000).
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📌 Decisiones técnicas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **App Router** para aprovechar Server Components y SEO nativo
+- **Datos mock centralizados** en `lib/data.ts`, listos para migrar a Supabase
+- **SEO por página** con `generateMetadata` para rutas dinámicas
+- **Paleta industrial custom** definida en `globals.css` con `@theme` de Tailwind v4
+- **JSON-LD Organization** para rich snippets de Google
+- **Sitemap y robots** generados automáticamente por convención de Next.js
+- **Hero con imagen difuminada** reutilizado en todas las páginas internas
+
+---
+
+## 📸 Screenshots
+
+_(Agregar capturas después del deploy)_
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] Conectar formulario de contacto a una API Route + Resend
+- [ ] Migrar `lib/data.ts` a Supabase
+- [ ] Panel de administración con Supabase Auth
+- [ ] Multi-idioma (ES / EN / PT) con `next-intl`
+- [ ] OG images dinámicas con `next/og`
+- [ ] Analytics con Vercel Analytics + Speed Insights
+
+---
+
+## 📄 Licencia
+
+MIT — Proyecto de portfolio, empresa ficticia.
+
+---
+
+## 👤 Autor
+
+**Cristian Marcus**
+
+- GitHub: [@cristianmarcus34-boop](https://github.com/cristianmarcus34-boop)
+- Portfolio: [agenciadigitalpowa.com.ar](https://agenciadigitalpowa.com.ar)
