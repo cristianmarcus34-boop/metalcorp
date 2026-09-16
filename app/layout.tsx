@@ -25,6 +25,10 @@ export const metadata: Metadata = {
             ? siteConfig.url
             : `https://${siteConfig.url}`
     ),
+    title: {
+        default: `${siteConfig.nombre} | Líder Global en Metales y Metalurgia`,
+        template: `%s | ${siteConfig.nombre}`,
+    },
     description: siteConfig.descripcion,
     applicationName: siteConfig.nombre,
     authors: [{ name: siteConfig.nombre, url: siteConfig.url }],
@@ -96,7 +100,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="es" className={`${inter.variable} ${montserrat.variable}`}>
-            <body className="font-sans antialiased bg-[#F4F6F7] text-[#2C3E50] min-h-screen flex flex-col">
+            <body className="font-sans antialiased bg-humo text-acero min-h-screen flex flex-col">
                 <OrganizationJsonLd />
                 <Header />
                 <main className="flex-1">{children}</main>

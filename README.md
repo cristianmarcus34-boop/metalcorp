@@ -2,7 +2,7 @@
 
 Sitio institucional para una multinacional metalúrgica ficticia. Proyecto de portfolio desarrollado con **Next.js 16**, **TypeScript** y **Tailwind CSS v4**.
 
-🔗 **Demo en vivo:** [metalcorp.vercel.app](https://metalcorp.vercel.app) _(actualizar después del deploy)_
+🔗 **Demo en vivo:** [metalcorp-gamma.vercel.app](https://metalcorp-gamma.vercel.app)
 
 ![Home de MetalCorp](./public/og/home.jpg)
 

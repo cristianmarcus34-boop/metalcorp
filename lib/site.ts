@@ -1,12 +1,12 @@
 export const siteConfig = {
     nombre: 'MetalCorp',
     descripcion:
-        'Multinacional metalúrgica con más de 50 años produciendo acero, aluminio, cobre y superaleaciones para las industrias más exigentes del mundo.',
+        'Multinacional metalúrgica con más de 50 años produciendo acero, aluminio, cobre y aleaciones de alta performance.',
     url:
         process.env.NEXT_PUBLIC_SITE_URL &&
             process.env.NEXT_PUBLIC_SITE_URL.trim() !== ''
             ? process.env.NEXT_PUBLIC_SITE_URL
-            : 'https://metalcorp.vercel.app',
+            : 'https://metalcorp-gamma.vercel.app',
     idioma: 'es_AR',
     contacto: {
         email: 'contacto@metalcorp.com',
